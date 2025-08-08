@@ -45,7 +45,7 @@ const PageContainer = styled.div`
 const BackgroundOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background-image: url('/5c78b862-f5a2-4cb0-95bb-1481754ce493.png');
+  background-image: url('\public/logo.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
