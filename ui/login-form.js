@@ -1,7 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
-import { loginUser } from '../actions/auth';
+import { loginUser } from '../app/actions/auth';
 
 export default function LoginForm() {
   const handleSubmit = async (event) => {

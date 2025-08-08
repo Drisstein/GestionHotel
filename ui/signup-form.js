@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { signupUser } from '../actions/auth';
+import { signupUser } from '../app/actions/auth';
 
 export default function SignupForm() {
   return (
@@ -23,7 +23,7 @@ export default function SignupForm() {
         </CheckboxContainer>
 
         <StyledButton type="submit">S'inscrire</StyledButton>
-       <StyledAccountText>
+        <StyledAccountText>
           Vous avez déjà un compte ?{' '}
           <Link href="/login">
             <StyledAccountLink><strong>Se connecter</strong></StyledAccountLink>
