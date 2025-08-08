@@ -4,11 +4,8 @@ pour les textes en noir :
 font-family: Roboto;
 font-weight: 400;
 font-style: Regular;
-font-size: 17.07px;
-leading-trim: NONE;
-line-height: 25.6px;
-letter-spacing: 0%;
-vertical-align: middle;
+font-size: 17 px;
+
 
 
 pour la couleur jaune-links : background: #FFD964;

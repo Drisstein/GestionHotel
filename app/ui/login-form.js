@@ -1,80 +1,100 @@
-// "use client";
-// import { useState } from "react";
-// import { loginUser } from "../actions/auth";
-
-// export default function LoginForm() {
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     const success = await loginUser(email, password);
-//     if (success) {
-//       alert("Connexion réussie !");
-//     } else {
-//       alert("Identifiants incorrects");
-//     }
-//   };
-
-//    return (
-//     <form onSubmit={handleSubmit}>
-//       <input
-//         type="email"
-//         placeholder="E-mail"
-//         value={email}
-//         onChange={(e) => setEmail(e.target.value)}
-//         required
-//       />
-//       <input
-//         type="password"
-//         placeholder="Mot de passe"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//         required
-//        />
-       
-//        <div>
-//          <p> Gardez-moi connecté</p>
-//        </div>
-//       <button type="submit">Se connecter</button>
-//      </form>
-     
-//   );
-// }
-
-// app/ui/login-form.js
-
 'use client';
 
-// ... imports et Styled Components ...
-import { loginUser } from '../actions/auth'; // 👈 Importe ta fonction
+import styled from 'styled-components';
+import { loginUser } from '../actions/auth';
 
 export default function LoginForm() {
-  // Gère la soumission du formulaire
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Empêche le rechargement de la page
-
-    // Récupère les valeurs des champs du formulaire
+    event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
 
-    // Appelle ta Server Action
     const result = await loginUser(email, password);
 
-    // Gère le résultat de l'authentification
     if (result.success) {
-      alert(result.message); // Affiche un message de succès
-      // Ici, tu peux rediriger l'utilisateur vers une autre page (par exemple, le tableau de bord)
+      alert(result.message);
+      // Redirection possible ici
     } else {
-      alert(result.message); // Affiche un message d'erreur
+      alert(result.message);
     }
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <StyledInput type="email" name="email" placeholder="Email" />
-      <StyledInput type="password" name="password" placeholder="Mot de passe" />
-      <StyledButton type="submit">Se connecter</StyledButton>
-    </StyledForm>
+    <StyledContainer>
+      <StyledForm onSubmit={handleSubmit}>
+        <h2>Connexion</h2>
+        <StyledLabel htmlFor="email">Email</StyledLabel>
+        <StyledInput type="email" name="email" id="email" placeholder="Email" required />
+        <StyledLabel htmlFor="password">Mot de passe</StyledLabel>
+        <StyledInput type="password" name="password" id="password" placeholder="Mot de passe" required />
+        <CheckboxContainer>
+          <input type="checkbox" id="remember" name="remember" />
+          <label htmlFor="remember">Gardez-moi connecté</label>
+        </CheckboxContainer>
+        <StyledButton type="submit">Se connecter</StyledButton>
+      </StyledForm>
+    </StyledContainer>
   );
 }
+const StyledContainer = styled.div`
+  min-height: 100vh;
+  width: 100vw;
+  background: #494C4F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', Arial, sans-serif;
+`;
+const StyledForm = styled.form`
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px;
+  border-radius: 8px;
+  background:white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: black;
+  font-family: 'Roboto', Arial, sans-serif;
+`;
+
+const StyledLabel = styled.label`
+  font-weight: 500;
+  margin-bottom: 4px;
+`;
+
+const StyledInput = styled.input`
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 8px;
+`;
+
+const StyledButton = styled.button`
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #494C4F;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  &:hover {
+    background: #005bb5;
+  }
+`;
+
+const CheckboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: black;
+`;
+
+const StyledTexte = styled.p`
+font - family: Roboto;
+font - weight: 400;
+font - style: Regular;
+font - size: 17 px;
+`;

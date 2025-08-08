@@ -1,66 +1,73 @@
-
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { signupUser } from '../actions/auth';
 
-
-
 export default function SignupForm() {
-    
-    return (
-        <>
-            <form action={signupUser} >
-                <p>Inscrivez-vous en tant que Admin</p>
-                <div>
-                    <label htmlFor="name">Nom</label>
-                    <input id="name" name="name" placeholder="Name" />
-                </div>
-                <div>
-                    <label htmlFor="email">E-mail</label>
-                    <input id="email" name="email" type="email" placeholder="Email" />
-                </div>
-                <div>
-                    <label htmlFor="password">Mot de passe</label>
-                    <input id="password" name="password" type="password" placeholder='Entrer votre mot de passse'/>
-                </div>
-                <div>
-                    <p> Accepter les termes et la politique</p>
-                </div>
-                <button type="submit">S'inscrire</button>
-            </form>
-            <p>Vous avez déjà un compte ?</p>
-            <Link href="/login">
-                <p><strong>Se connecter</strong></p>
-            </Link>
-        </>
-    );
-    return (
-    <StyledForm>
-      <StyledInput type="text" placeholder="Nom d'utilisateur" />
-      <StyledInput type="email" placeholder="Email" />
-      <StyledInput type="password" placeholder="Mot de passe" />
-      <StyledButton type="submit">S'inscrire</StyledButton>
-    </StyledForm>
-  );
+  return (
+    <StyledContainer>
+      <StyledForm action={signupUser}>
+        <p>Inscrivez-vous en tant qu'Admin</p>
+        <label htmlFor="name">Nom</label>
+        <StyledInput id="name" name="name" placeholder="Nom" required />
 
+        <label htmlFor="email">E-mail</label>
+        <StyledInput id="email" name="email" type="email" placeholder="Email" required />
+
+        <label htmlFor="password">Mot de passe</label>
+        <StyledInput id="password" name="password" type="password" placeholder="Entrer votre mot de passe" required />
+
+        <CheckboxContainer>
+          <input type="checkbox" id="terms" name="terms" required />
+          <label htmlFor="terms">Accepter les termes et la politique</label>
+        </CheckboxContainer>
+
+        <StyledButton type="submit">S'inscrire</StyledButton>
+       <StyledAccountText>
+          Vous avez déjà un compte ?{' '}
+          <Link href="/login">
+            <StyledAccountLink><strong>Se connecter</strong></StyledAccountLink>
+          </Link>
+        </StyledAccountText>
+      </StyledForm>
+    </StyledContainer>
+  );
 }
 
-
 const StyledContainer = styled.div`
+  min-height: 100vh;
+  width: 100vw;
+  background: #494C4F;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; // Pour que le conteneur prenne toute la hauteur de la vue
+  font-family: 'Roboto', Arial, sans-serif;
 `;
 
 const StyledForm = styled.form`
   width: 100%;
   max-width: 400px;
-  padding: 40px;
+  margin: 40px auto;
+  padding: 32px;
   border-radius: 8px;
-  background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: white;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: black;
+  font-family: 'Roboto', Arial, sans-serif;
+`;
+
+const StyledAccountText = styled.p`
+  color: #FFD964;
+  font-family: 'Roboto', Arial, sans-serif;
+`;
+
+const StyledAccountLink = styled.a`
+  color: #FFD964;
+  text-decoration: underline;
+  cursor: pointer;
 `;
 
 const StyledInput = styled.input`
@@ -68,7 +75,7 @@ const StyledInput = styled.input`
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 `;
 
 const StyledButton = styled.button`
@@ -76,7 +83,7 @@ const StyledButton = styled.button`
   padding: 12px;
   border: none;
   border-radius: 4px;
-  background-color: #0070f3;
+  background-color: #494C4F;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -85,4 +92,10 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #005bb5;
   }
+`;
+
+const CheckboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;

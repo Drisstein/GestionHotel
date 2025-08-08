@@ -2,7 +2,6 @@
 
 export async function loginUser(email, password) {
   // Simulation
- // Exemple fictif
   if (email === 'admin@gmail.com' && password === '1234') {
     return { success: true, message: 'Connexion réussie' };
   } else {
