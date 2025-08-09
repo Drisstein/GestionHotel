@@ -1,7 +1,7 @@
 'use client';
 
 import styled from 'styled-components';
-import { loginUser } from '../actions/auth';
+import { loginUser } from '../../actions/auth';
 import Link from 'next/link';
 
 export default function LoginForm() {

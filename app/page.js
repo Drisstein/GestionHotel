@@ -12,12 +12,12 @@ export default function HomePage() {
         <Nav>
           <NavList>
             <NavItem>
-              <Link href="/login" passHref legacyBehavior>
+              <Link href="./auth/login" passHref legacyBehavior>
                 <NavLink>Aller à la page de connexion</NavLink>
               </Link>
             </NavItem>
             <NavItem>
-              <Link href="/signup" passHref legacyBehavior>
+              <Link href="./auth/signup" passHref legacyBehavior>
                 <NavLink>Aller à la page d'inscription</NavLink>
               </Link>
             </NavItem>

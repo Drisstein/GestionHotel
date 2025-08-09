@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { signupUser } from '../app/actions/auth';
+import { signupUser } from '../actions/auth';
 
 export default function SignupForm() {
   return (
