@@ -1,12 +1,8 @@
 'use client';
 
 import styled from 'styled-components';
-<<<<<<< HEAD:app/ui/login-form.js
 import { loginUser } from '../actions/auth';
 import Link from 'next/link';
-=======
-import { loginUser } from '../app/actions/auth';
->>>>>>> 95f4fdd61380f65fd99d051b6ecd1f8a75de68b7:ui/login-form.js
 
 export default function LoginForm() {
   const handleSubmit = async (event) => {
