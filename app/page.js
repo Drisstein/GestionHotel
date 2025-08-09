@@ -12,12 +12,12 @@ export default function HomePage() {
         <Nav>
           <NavList>
             <NavItem>
-              <Link href="./auth/login" passHref legacyBehavior>
+              <Link href="auth/login" passHref legacyBehavior>
                 <NavLink>Aller à la page de connexion</NavLink>
               </Link>
             </NavItem>
             <NavItem>
-              <Link href="./auth/signup" passHref legacyBehavior>
+              <Link href="auth/signup" passHref legacyBehavior>
                 <NavLink>Aller à la page d'inscription</NavLink>
               </Link>
             </NavItem>
@@ -45,7 +45,7 @@ const PageContainer = styled.div`
 const BackgroundOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background-image: url('\public/logo.png');
+  background-image: url('\public/_before.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

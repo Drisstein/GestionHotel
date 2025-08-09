@@ -45,12 +45,12 @@ const StyledContainer = styled.div`
 `;
 
 const StyledForm = styled.form`
-  width: 100%;
+   width: 100%;
   max-width: 400px;
   margin: 40px auto;
   padding: 32px;
   border-radius: 8px;
-  background: white;
+  background:white;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   display: flex;
   flex-direction: column;

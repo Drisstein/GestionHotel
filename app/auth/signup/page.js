@@ -1,6 +1,6 @@
 
 'use client';
-import SignupForm from '../../../ui/signup-form';
+import SignupForm from '@/ui/signup-form';
 import styled from 'styled-components';
 
 export default function SignupPage() {
