@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import { loginUser } from '../actions/auth';
+import Link from 'next/link';
 
 export default function LoginForm() {
   const handleSubmit = async (event) => {
@@ -14,6 +15,9 @@ export default function LoginForm() {
     if (result.success) {
       alert(result.message);
       // Redirection possible ici
+      <Link href="/app\dashboard.js" passHref legacyBehavior>
+      </Link>
+
     } else {
       alert(result.message);
     }
@@ -23,6 +27,7 @@ export default function LoginForm() {
     <StyledContainer>
       <StyledForm onSubmit={handleSubmit}>
         <h2>Connexion</h2>
+        <p>Connectez-vous en tant que Admin</p>
         <StyledLabel htmlFor="email">Email</StyledLabel>
         <StyledInput type="email" name="email" id="email" placeholder="Email" required />
         <StyledLabel htmlFor="password">Mot de passe</StyledLabel>

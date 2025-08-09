@@ -1,9 +1,13 @@
 'use server';
 
+import Link from "next/link";
+
 export async function loginUser(email, password) {
   // Simulation
   if (email === 'admin@gmail.com' && password === '1234') {
     return { success: true, message: 'Connexion réussie' };
+    
+    
   } else {
     return { success: false, message: 'Email ou mot de passe incorrect' };
   }
