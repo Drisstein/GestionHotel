@@ -17,7 +17,7 @@ export default function SignupForm() {
         <StyledInput id="password" name="password" type="password" placeholder="Entrer votre mot de passe" required />
 
         <CheckboxContainer>
-          <input type="checkbox" id="terms" name="terms" required />
+          <input type="checkbox" id="terms" name="terms"  />
           <label htmlFor="terms">Accepter les termes et la politique</label>
         </CheckboxContainer>
 

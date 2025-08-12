@@ -18,7 +18,7 @@ export default function LoginForm() {
           <Input id="password" name="password" type="password" placeholder="Entrer votre mot de passe" required />
 
           <CheckboxContainer>
-            <Checkbox type="checkbox" id="terms" name="terms" required />
+            <Checkbox type="checkbox" id="terms" name="terms" />
             <span>Me Garder connecter</span>
           </CheckboxContainer>
 
