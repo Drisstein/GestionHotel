@@ -1,12 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { signupUser } from '../actions/auth';
 
 export default function SignupForm() {
   return (
     <StyledContainer>
-      <StyledForm action={signupUser}>
+      <StyledForm >
         <p>Inscrivez-vous en tant qu'Admin</p>
         <label htmlFor="name">Nom</label>
         <StyledInput id="name" name="name" placeholder="Nom" required />
@@ -25,7 +24,7 @@ export default function SignupForm() {
         <StyledButton type="submit">S'inscrire</StyledButton>
         <StyledAccountText>
           Vous avez déjà un compte ?{' '}
-          <Link href="/login">
+          <Link href="/auth/login">
             <StyledAccountLink><strong>Se connecter</strong></StyledAccountLink>
           </Link>
         </StyledAccountText>

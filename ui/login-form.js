@@ -2,18 +2,14 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { signupUser } from "../actions/auth";
 
-export default function SignupForm() {
+export default function LoginForm() {
   return (
     <Background>
       <Overlay>
-        <FormContainer action={signupUser}>
+        <FormContainer >
           <Title>RED PRODUCT</Title>
-          <Subtitle>Inscrivez-vous en tant qu'Admin</Subtitle>
-
-          <Label htmlFor="name">Nom</Label>
-          <Input id="name" name="name" placeholder="Nom" required />
+          <Subtitle>Connectez-vous en tant qu'Admin</Subtitle>
 
           <Label htmlFor="email">E-mail</Label>
           <Input id="email" name="email" type="email" placeholder="Email" required />
@@ -23,15 +19,14 @@ export default function SignupForm() {
 
           <CheckboxContainer>
             <Checkbox type="checkbox" id="terms" name="terms" required />
-            <span>Accepter les termes et la politique</span>
+            <span>Me Garder connecter</span>
           </CheckboxContainer>
 
-          <Button type="submit">S'inscrire</Button>
+          <Button type="submit">Se connecter</Button>
 
-          <SignupText>
-            Vous avez déjà un compte ?{" "}
-            <Link href="/login" passHref>
-              <YellowLink>Se connecter</YellowLink>
+          <SignupText>pas  un compte ?{" "}
+            <Link href="/auth/signup" passHref>
+              <YellowLink>S'inscrire'</YellowLink>
             </Link>
           </SignupText>
         </FormContainer>
@@ -46,7 +41,7 @@ export default function SignupForm() {
 const Background = styled.div`
   height: 100vh;
   width: 100%;
-  background: url("/public/__before.png") no-repeat center center;
+  background: url("public/__before.png") no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: center;
