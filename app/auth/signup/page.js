@@ -1,4 +1,3 @@
-
 'use client';
 import SignupForm from '@/app/auth/signup/signup-form';
 import styled from 'styled-components';
@@ -6,10 +5,6 @@ import styled from 'styled-components';
 export default function SignupPage() {
   return (
     <PageContainer>
-      <Header>
-        <LogoRed src="public/logo.svg" alt="Logo" />
-        <Title>RED PRODUCT</Title>
-      </Header>
       <SignupForm />
     </PageContainer>
   );
@@ -24,23 +19,3 @@ const PageContainer = styled.div`
   background: #494C4F;
 `;
 
-const Header = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap:5px;
-  align-items: center;
-  margin-bottom: 32px;
-`;
-
-const LogoRed = styled.img`
-  width: 100px;
-  height: auto;
-  margin-bottom: 12px;
-`;
-
-const Title = styled.h1`
-  color: #FFD964;
-  font-family: 'Roboto', Arial, sans-serif;
-  margin: 0;
-  font-size: 2rem;
-`;
