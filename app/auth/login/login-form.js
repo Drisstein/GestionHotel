@@ -24,9 +24,9 @@ export default function LoginForm() {
 
           <Button type="submit">Se connecter</Button>
         </FormContainer>
-        <Link href="/auth/signup" passHref>
-            <YellowLink><strong>Mot de passe oublié ?</strong></YellowLink>
-          </Link>
+       <Link href="/auth/signup" passHref legacyBehavior>
+  <YellowLink><strong>S'inscrire</strong></YellowLink>
+</Link>
         <SignupText>Vous n'avez pas un compte ?{" "}
           <Link href="/auth/signup" passHref>
             <YellowLink><strong>S'inscrire</strong></YellowLink>

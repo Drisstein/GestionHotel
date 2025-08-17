@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import DashboardLayout from '../components/layout/DashboardLayout';
-console.log('DashboardLayout:', DashboardLayout);
 import HotelGrid from '../components/hotel/HotelGrid';
 import HotelModal from '../components/hotel/HotelModal';
 import { Plus, Home } from 'lucide-react';
