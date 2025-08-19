@@ -2,11 +2,11 @@
 const nextConfig = {
   compiler: {
     styledComponents: true,
-    turbo: false
+     reactStrictMode: true,
+  swcMinify: true,
+    
   },
-  experimental: {
-    appDir: true,
-  },
+  
   images: {
     domains: ['images.unsplash.com'],
   },
