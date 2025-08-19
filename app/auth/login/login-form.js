@@ -12,10 +12,10 @@ export default function LoginForm() {
           <Subtitle>Connectez-vous en tant qu'Admin</Subtitle>
 
           <Label htmlFor="email">E-mail</Label>
-          <Input id="email" name="email" type="email" placeholder="Email" required />
+          <Input id="email" name="email" type="email" placeholder="" required />
 
           <Label htmlFor="password">Mot de passe</Label>
-          <Input id="password" name="password" type="password" placeholder="Entrer votre mot de passe" required />
+          <Input id="password" name="password" type="password" placeholder="" required />
 
           <CheckboxContainer>
             <Checkbox type="checkbox" id="terms" name="terms" />
@@ -41,7 +41,7 @@ export default function LoginForm() {
 const Background = styled.div`
   height: 100vh;
   width: 100vw;
-  background: url("public/__before.png") no-repeat center center;
+  background: url("/__before.png") no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -87,10 +87,9 @@ const Subtitle = styled.p`
 `;
 
 const Label = styled.label`
-  margin-bottom: 1.25rem;
-  color: #000;
+  margin: 0.75rem;
+  color: gray;
   font-family: Roboto, Arial, sans-serif;
-  // font-weight: 400;
   font-size: 17px;
 `;
 
@@ -98,6 +97,7 @@ const Input = styled.input`
   padding: 0.75rem;
   margin-bottom: 10px;
   border-style: none;
+  border-bottom: 1px solid gray;
  
 `;
 

@@ -22,13 +22,13 @@ export default function SignupForm() {
           <StyledForm onSubmit={handleSubmit}>
             <FormTitle>Inscrivez-vous en tant qu'Admin</FormTitle>
             <Label htmlFor="name">Nom</Label>
-            <StyledInput id="name" name="name" placeholder="Nom" required />
+            <StyledInput id="name" name="name" placeholder="" required />
 
             <Label htmlFor="email">E-mail</Label>
-            <StyledInput id="email" name="email" type="email" placeholder="Email" required />
+            <StyledInput id="email" name="email" type="email" placeholder="" required />
 
             <Label htmlFor="password">Mot de passe</Label>
-            <StyledInput id="password" name="password" type="password" placeholder="Entrer votre mot de passe" required />
+            <StyledInput id="password" name="password" type="password" placeholder="" required />
 
             <CheckboxContainer>
               <Checkbox type="checkbox" id="terms" name="terms" />
@@ -117,16 +117,18 @@ const StyledAccountLink = styled.a`
 `;
 
 const StyledInput = styled.input`
-  padding: 12px;
+  padding: 0.75rem;
   margin-bottom: 10px;
+  border-style: none;
+  border-bottom: 1px solid gray;
 `;
 
 const Label = styled.label`
-  margin-bottom: 1.25rem;
-  color: #000;
+  margin: 0.75rem;
+  color: gray;
   font-family: Roboto, Arial, sans-serif;
-  font-weight: 400;
   font-size: 17px;
+
 `;
 
 const StyledButton = styled.button`
