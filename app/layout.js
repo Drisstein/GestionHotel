@@ -2,8 +2,8 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Mon App',
-  description: 'Une app Next.js',
+  title: 'RED App',
+  description: 'Application de gestion des hôtels',
 }
 
 export default function RootLayout({ children }) {
