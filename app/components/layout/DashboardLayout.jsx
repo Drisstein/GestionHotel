@@ -4,6 +4,7 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import Header from './Header';
 
+
 const DashboardLayout = ({ children, title = "Dashboard" }) => {
     const styles = {
         container: {
@@ -12,7 +13,7 @@ const DashboardLayout = ({ children, title = "Dashboard" }) => {
             backgroundColor: '#f5f5f5',
             fontFamily: 'Arial, sans-serif'
         },
-        mainContent: {
+        mainContent: { 
             marginLeft: '250px',
             flex: 1,
             minHeight: '100vh'

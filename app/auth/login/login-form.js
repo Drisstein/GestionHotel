@@ -2,13 +2,24 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { useRouter } from "next/navigation"; // Ajout du hook
 
 export default function LoginForm() {
+  const router = useRouter();
+
+  // Gestion de la soumission du formulaire
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Ici tu ajoutes ta logique de vérification (API, etc.)
+    // Si la connexion est réussie :
+    router.push("/hotels");
+  };
+
   return (
     <Background>
       <Overlay>
         <Logo src="/logoRD.svg" alt="Logo RED" />
-        <FormContainer >
+        <FormContainer onSubmit={handleSubmit}>
           <Subtitle>Connectez-vous en tant qu'Admin</Subtitle>
 
           <Label htmlFor="email">E-mail</Label>
@@ -24,11 +35,9 @@ export default function LoginForm() {
 
           <Button type="submit">Se connecter</Button>
         </FormContainer>
-       <Link href="/auth/signup" passHref legacyBehavior>
-  <YellowLink><strong>S'inscrire</strong></YellowLink>
-</Link>
+
         <SignupText>Vous n'avez pas un compte ?{" "}
-          <Link href="/auth/signup" passHref>
+          <Link href="/auth/signup" >
             <YellowLink><strong>S'inscrire</strong></YellowLink>
           </Link>
         </SignupText>

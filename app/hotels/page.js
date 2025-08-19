@@ -1,12 +1,12 @@
 'use client';
-
 import React, { useState } from 'react';
-import DashboardLayout from '../components/layout/DashboardLayout';
+import  DashboardLayout  from '../components/layout/DashboardLayout';
 import HotelGrid from '../components/hotel/HotelGrid';
 import HotelModal from '../components/hotel/HotelModal';
 import { Plus, Home } from 'lucide-react';
 
 // Données temporaires - à remplacer par une API
+// Données complètes des hôtels - basées sur votre capture d'écran
 const hotelsData = [
   {
     id: 1,
@@ -24,7 +24,38 @@ const hotelsData = [
     price: "85 000 FCFA",
     image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&h=200&fit=crop"
   },
-  // ... autres hôtels
+  {
+    id: 3,
+    name: "Pullman Saly Hotel",
+    location: "Saly",
+    rating: 5,
+    price: "125 000 FCFA",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=200&fit=crop"
+  },
+  {
+    id: 4,
+    name: "Lamantin Beach Resort",
+    location: "Saly",
+    rating: 4,
+    price: "95 000 FCFA",
+    image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=200&fit=crop"
+  },
+  {
+    id: 5,
+    name: "Terrou-Bi Resort",
+    location: "Dakar",
+    rating: 5,
+    price: "110 000 FCFA",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&h=200&fit=crop"
+  },
+  {
+    id: 6,
+    name: "Lodge des Collines",
+    location: "Bandia",
+    rating: 4,
+    price: "75 000 FCFA",
+    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=400&h=200&fit=crop"
+  }
 ];
 
 const HotelsPage = () => {

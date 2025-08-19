@@ -1,14 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { useRouter } from 'next/navigation'; // Ajout du hook
 
 export default function SignupForm() {
+  const router = useRouter();
+
+  // Gestion de la soumission du formulaire
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Ici tu ajoutes ta logique d'inscription (API, etc.)
+    // Si l'inscription est réussie :
+    router.push("/auth/login");
+  };
+
   return (
     <Background>
       <Overlay>
         <FormWrapper>
           <Logo src="/logoRD.svg" alt="Logo RED" />
-          <StyledForm>
+          <StyledForm onSubmit={handleSubmit}>
             <FormTitle>Inscrivez-vous en tant qu'Admin</FormTitle>
             <Label htmlFor="name">Nom</Label>
             <StyledInput id="name" name="name" placeholder="Nom" required />
@@ -20,9 +31,9 @@ export default function SignupForm() {
             <StyledInput id="password" name="password" type="password" placeholder="Entrer votre mot de passe" required />
 
             <CheckboxContainer>
-            <Checkbox type="checkbox" id="terms" name="terms" />
-            <span>Accepter les termes et la politique </span>
-          </CheckboxContainer>
+              <Checkbox type="checkbox" id="terms" name="terms" />
+              <span>Accepter les termes et la politique </span>
+            </CheckboxContainer>
 
             <StyledButton type="submit">S'inscrire</StyledButton>
           </StyledForm>
