@@ -98,7 +98,7 @@ const Sidebar = () => {
             width: '12px',
             height: '12px',
             backgroundColor: '#22c55e',
-            border: '2px solid #64748b',
+            border: '2px solid #ffffffff',
             borderRadius: '50%'
         },
         userInfo: {
@@ -172,14 +172,14 @@ const Sidebar = () => {
                             onClick={() => handleMenuClick(item.id)}
                             onMouseEnter={(e) => {
                                 if (!isActive) {
-                                    e.target.style.backgroundColor = '#475569';
-                                    e.target.style.color = 'white';
+                                    e.target.style.backgroundColor = '#ffffffff';
+                                    e.target.style.color = 'rgba(61, 61, 61, 1)';
                                 }
                             }}
                             onMouseLeave={(e) => {
                                 if (!isActive) {
                                     e.target.style.backgroundColor = 'transparent';
-                                    e.target.style.color = '#cbd5e1';
+                                    e.target.style.color = '#ffffffff';
                                 }
                             }}
                         >

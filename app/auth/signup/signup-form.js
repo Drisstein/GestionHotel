@@ -117,7 +117,6 @@ const StyledAccountLink = styled.a`
 `;
 
 const StyledInput = styled.input`
-  width: 100%;
   padding: 12px;
   margin-bottom: 10px;
 `;
