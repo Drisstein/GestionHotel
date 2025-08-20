@@ -95,14 +95,13 @@ const Header = ({ title = "Dashboard" }) => {
 
     // Fonction de déconnexion
     const handleLogout = () => {
-    // Supprime tout ce qui garde l’utilisateur connecté
-    localStorage.removeItem("token"); 
-    sessionStorage.removeItem("token");
 
-    // Si tu utilises des cookies, pense à les vider aussi côté serveur
+    // Supprime tout ce qui garde l’utilisateur connecté
+    localStorage.removeItem("isLoggedIn"); // Ici je supprime le token: "isLoggedIn"
+    sessionStorage.removeItem("isLoggedIn");
 
     // Redirige vers la page de connexion
-    router.push('/page');
+    router.push('/auth/login');
 };
 
     return (

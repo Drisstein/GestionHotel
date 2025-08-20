@@ -16,77 +16,76 @@ export default function SignupForm() {
 
   return (
     <Background>
-      <Overlay>
-        <FormWrapper>
-          <Logo src="/logoRD.svg" alt="Logo RED" />
-          <StyledForm onSubmit={handleSubmit}>
-            <FormTitle>Inscrivez-vous en tant qu'Admin</FormTitle>
-            <Label htmlFor="name">Nom</Label>
-            <StyledInput id="name" name="name" placeholder="" required />
+      <FormWrapper>
+        <Logo src="/logoRD.svg" alt="Logo RED" />
+        <StyledForm onSubmit={handleSubmit}>
+          <FormTitle>Inscrivez-vous en tant qu'Admin</FormTitle>
+          <Label htmlFor="name">Nom</Label>
+          <StyledInput id="name" name="name" placeholder="" required />
 
-            <Label htmlFor="email">E-mail</Label>
-            <StyledInput id="email" name="email" type="email" placeholder="" required />
+          <Label htmlFor="email">E-mail</Label>
+          <StyledInput id="email" name="email" type="email" placeholder="" required />
 
-            <Label htmlFor="password">Mot de passe</Label>
-            <StyledInput id="password" name="password" type="password" placeholder="" required />
+          <Label htmlFor="password">Mot de passe</Label>
+          <StyledInput id="password" name="password" type="password" placeholder="" required />
 
-            <CheckboxContainer>
-              <Checkbox type="checkbox" id="terms" name="terms" />
-              <span>Accepter les termes et la politique </span>
-            </CheckboxContainer>
+          <CheckboxContainer>
+            <Checkbox type="checkbox" id="terms" name="terms" required/>
+            <span>Accepter les termes et la politique </span>
+          </CheckboxContainer>
 
-            <StyledButton type="submit">S'inscrire</StyledButton>
-          </StyledForm>
-          <StyledAccountText>
-            Vous avez déjà un compte ?{' '}
-            <Link href="/auth/login" passHref >
-              <StyledAccountLink><strong>Se connecter</strong></StyledAccountLink>
-            </Link>
-          </StyledAccountText>
-        </FormWrapper>
-      </Overlay>
+          <StyledButton type="submit">S'inscrire</StyledButton>
+        </StyledForm>
+        <StyledAccountText>
+          Vous avez déjà un compte ?{' '}
+          <Link href="/auth/login" passHref >
+            <StyledAccountLink><strong>Se connecter</strong></StyledAccountLink>
+          </Link>
+        </StyledAccountText>
+      </FormWrapper>
     </Background>
   );
 }
 
+// === Styles ===
 const Background = styled.div`
-  height: 100vh;
   width: 100vw;
-  background: url("/public/__before.png") no-repeat center center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+
+  background-image: url("/__before.png");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Couleur superposée en multiply  */
+  background-color: #494C4F;
+  background-blend-mode: multiply;
+
   display: flex;
   justify-content: center;
-  align-items: center;
-`;
-
-const Overlay = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(61, 61, 61, 1); /* #494C4F avec transparence */
-  display: flex;
-  justify-content: column;
   align-items: center;
 `;
 
 const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;   /* centre verticalement */
+  align-items: center;       /* centre horizontalement */
   width: 100%;
+  max-width: 420px;
 `;
 
+
 const Logo = styled.img`
-  top: 146px;
   width: 200px;
   height: auto;
   margin-bottom: 10px;
 `;
 
 const StyledForm = styled.form`
-   width: 384px;
-  height: 424.25px;
-  top: 222px;
-  left: 768px;
+  width: 384px;
   padding: 2rem;
   background: white;
   border-radius: 4px;
@@ -97,14 +96,14 @@ const StyledForm = styled.form`
 `;
 
 const FormTitle = styled.p`
- margin-bottom: 2rem;
+  margin-bottom: 2rem;
   font-family: Roboto, Arial, sans-serif;
   font-size: 17px;
 `;
 
 const StyledAccountText = styled.p`
   color: white;
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   text-align: center;
   margin-top: 24px;
 `;
@@ -113,7 +112,6 @@ const StyledAccountLink = styled.a`
   color: #FFD964;
   text-decoration: underline;
   cursor: pointer;
-  top:33px ;
 `;
 
 const StyledInput = styled.input`
@@ -124,11 +122,10 @@ const StyledInput = styled.input`
 `;
 
 const Label = styled.label`
-  margin: 0.75rem;
+  margin: 0.75rem 0;
   color: gray;
   font-family: Roboto, Arial, sans-serif;
   font-size: 17px;
-
 `;
 
 const StyledButton = styled.button`
@@ -154,7 +151,7 @@ const CheckboxContainer = styled.div`
   gap: 0.5rem;
   font-size: 17px;
   font-family: Roboto, Arial, sans-serif;
-   color: #000;
+  color: #000;
   margin-bottom: 1.5rem;
 `;
 

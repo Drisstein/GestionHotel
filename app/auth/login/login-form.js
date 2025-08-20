@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styled from "styled-components";
@@ -13,16 +13,12 @@ export default function LoginForm() {
   // Vérifier si un user est déjà connecté
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (isLoggedIn === "true") {
-      router.push("/hotels");
-    }
+    if (isLoggedIn === "true") router.push("/hotels");
   }, [router]);
 
-  // Soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Vérification avec identifiants prédéfinis
     if (email === "admin@gmail.com" && password === "admin123") {
       localStorage.setItem("isLoggedIn", "true");
       router.push("/hotels");
@@ -33,19 +29,18 @@ export default function LoginForm() {
 
   return (
     <Background>
-      <Overlay>
+      <Container>
         <Logo src="/logoRD.svg" alt="Logo RED" />
+
         <FormContainer onSubmit={handleSubmit}>
           <Subtitle>Connectez-vous en tant qu'Admin</Subtitle>
-
           {error && <ErrorMessage>{error}</ErrorMessage>}
 
           <Label htmlFor="email">E-mail</Label>
           <Input
             id="email"
-            name="email"
             type="email"
-            placeholder="admin@gmail.com"
+            placeholder=""
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -54,16 +49,15 @@ export default function LoginForm() {
           <Label htmlFor="password">Mot de passe</Label>
           <Input
             id="password"
-            name="password"
             type="password"
-            placeholder="Entrer votre mot de passe"
+            placeholder=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
 
           <CheckboxContainer>
-            <Checkbox type="checkbox" id="terms" name="terms" />
+            <Checkbox type="checkbox" id="terms" />
             <span>Me garder connecté</span>
           </CheckboxContainer>
 
@@ -76,7 +70,7 @@ export default function LoginForm() {
             <YellowLink><strong>S'inscrire</strong></YellowLink>
           </Link>
         </SignupText>
-      </Overlay>
+      </Container>
     </Background>
   );
 }
@@ -85,26 +79,35 @@ export default function LoginForm() {
 const Background = styled.div`
   height: 100vh;
   width: 100vw;
-  background: url("/__before.png") no-repeat center center;
+  margin:0;
+  padding:0;
+  background-image: url("/__before.png");
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Couleur de superposition en multiply */
+  background-color: #494C4F;
+  background-blend-mode: multiply;
+
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-const Overlay = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(61, 61, 61, 1);
+
+const Container = styled.div`
+  margin:0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
 `;
 
 const Logo = styled.img`
   width: 200px;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 `;
 
 const FormContainer = styled.form`
@@ -170,17 +173,15 @@ const SignupText = styled.p`
   text-align: center;
   color: white;
   font-size: 15px;
-    font-family: Roboto, Arial, sans-serif;
-
+  font-family: Roboto, Arial, sans-serif;
 `;
 
 const YellowLink = styled.a`
   color: #FFD964;
   font-weight: 500;
+  font-family: Roboto, Arial, sans-serif;
   &:hover {
     text-decoration: underline;
-      font-family: Roboto, Arial, sans-serif;
-
   }
 `;
 
@@ -188,4 +189,5 @@ const ErrorMessage = styled.p`
   color: red;
   font-size: 14px;
   margin-bottom: 1rem;
+  text-align: center;
 `;
