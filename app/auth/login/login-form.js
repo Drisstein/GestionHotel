@@ -27,7 +27,7 @@ export default function LoginForm() {
       localStorage.setItem("isLoggedIn", "true");
       router.push("/hotels");
     } else {
-      setError("❌ Email ou mot de passe incorrect");
+      setError("Email ou mot de passe incorrect");
     }
   };
 
