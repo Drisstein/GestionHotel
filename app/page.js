@@ -7,8 +7,11 @@ export default function HomePage() {
   const router = useRouter();
 
   useEffect(() => {
-    router.replace("/auth/login");
-  }, [router]);
+  const token = localStorage.getItem("token");
+  if (token) {
+    router.push("/hotels");
+  }
+}, []);
 
   return null;
 }

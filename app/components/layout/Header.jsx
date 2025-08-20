@@ -1,9 +1,12 @@
 'use client';
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { Search, Bell, LogOut } from 'lucide-react';
 
 const Header = ({ title = "Dashboard" }) => {
+    const router = useRouter();
+
     const styles = {
         header: {
             backgroundColor: 'white',
@@ -90,6 +93,18 @@ const Header = ({ title = "Dashboard" }) => {
         }
     };
 
+    // Fonction de déconnexion
+    const handleLogout = () => {
+    // Supprime tout ce qui garde l’utilisateur connecté
+    localStorage.removeItem("token"); 
+    sessionStorage.removeItem("token");
+
+    // Si tu utilises des cookies, pense à les vider aussi côté serveur
+
+    // Redirige vers la page de connexion
+    router.push('/page');
+};
+
     return (
         <header style={styles.header}>
             <h1 style={styles.title}>{title}</h1>
@@ -137,6 +152,7 @@ const Header = ({ title = "Dashboard" }) => {
                 {/* Logout */}
                 <button 
                     style={styles.iconButton}
+                    onClick={handleLogout}
                     onMouseEnter={(e) => e.target.style.backgroundColor = '#fef2f2'}
                     onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}
                 >
