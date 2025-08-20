@@ -170,6 +170,8 @@ const SignupText = styled.p`
   text-align: center;
   color: white;
   font-size: 15px;
+    font-family: Roboto, Arial, sans-serif;
+
 `;
 
 const YellowLink = styled.a`
@@ -177,6 +179,8 @@ const YellowLink = styled.a`
   font-weight: 500;
   &:hover {
     text-decoration: underline;
+      font-family: Roboto, Arial, sans-serif;
+
   }
 `;
 
