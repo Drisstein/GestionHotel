@@ -198,7 +198,7 @@ const Sidebar = () => {
                         <div style={styles.onlineIndicator}></div>
                     </div>
                     <div style={styles.userInfo}>
-                        <p style={styles.userName}>Drisstein</p>
+                        <p style={styles.userName}>Admin</p>
                         <p style={styles.userStatus}>En ligne</p>
                     </div>
                 </div>
